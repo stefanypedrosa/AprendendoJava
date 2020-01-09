@@ -11,7 +11,7 @@ public class AppBiblioteca {
 		l5 = new Biblioteca("Ainda sou eu", "Jojo Moyes", 2018, "Aventura", 3, 6);
 		
 		do {
-			System.out.println("BIBLIOTECA MUNICIPAL\nSelecione um livro:\n1 - Harry Potter\n2 - Se eu ficar\n3 - Para onde ela foi\n4 - Dracula\n5 - Ainda sou eu\n9 - Sair\n");
+			System.out.println("BIBLIOTECA MUNICIPAL\n\nSelecione um livro:\n1 - Harry Potter\n2 - Se eu ficar\n3 - Para onde ela foi\n4 - Dracula\n5 - Ainda sou eu\n9 - Sair\n");
 			opcL = teclado.nextInt();
 			switch(opcL) {
 				case 1:
