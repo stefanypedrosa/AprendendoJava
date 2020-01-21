@@ -1,0 +1,19 @@
+<div class="row" id="titulo">
+    <div class="col-md-12">
+        <h4>LISTAGEM PRODUTOS</h4>
+    </div>
+</div>
+<div class="row mt-5">
+    <div class="col-md-12">
+        <div *ngFor='let produto of lista'>
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4 div">
+                    <h4>{{produto.codigo}} - {{produto.titulo}}</h4>
+                    <h5>{{produto.detalhes}} | R$ {{produto.preco}},00</h5>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+        </div>
+    </div>
+</div>
