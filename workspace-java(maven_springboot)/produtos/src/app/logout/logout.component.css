@@ -1,0 +1,21 @@
+h3{
+    color: darkred;
+    text-align: center;
+    margin-bottom: 2%;
+    margin-top: 5%;
+}
+.row{
+    margin-bottom: 11%;
+    margin-top: 3%;
+    align-content: center;
+}
+.btn{
+    color: darkred;
+    background-color: rosybrown;
+    margin-left: 48%;
+}
+.btn-outline :hover{
+    color: rosybrown;
+    background-color: darkred;
+    margin-left: 48%;
+}
