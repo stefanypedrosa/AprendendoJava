@@ -8,6 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
 @Table(name="tbl_produto")
 public class produto {
@@ -27,12 +29,19 @@ public class produto {
 	private float preco;
 	
 	@Column(name="foto")
-	private String linkFoto;
+	private String foto;
 	
 	@ManyToOne
+	@JsonIgnoreProperties("produto")
 	private departamento departamento;
 	
 	
+	public departamento getDepartamento() {
+		return departamento;
+	}
+	public void setDepartamento(departamento departamento) {
+		this.departamento = departamento;
+	}
 	public int getId() {
 		return id;
 	}
@@ -57,10 +66,10 @@ public class produto {
 	public void setPreco(float preco) {
 		this.preco = preco;
 	}
-	public String getLinkFoto() {
-		return linkFoto;
+	public String getFoto() {
+		return foto;
 	}
-	public void setLinkFoto(String linkFoto) {
-		this.linkFoto = linkFoto;
+	public void setFoto(String foto) {
+		this.foto = foto;
 	}
 }

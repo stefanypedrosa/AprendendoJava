@@ -11,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
 @Table(name="tbl_departamento")
 public class departamento {
@@ -23,10 +25,12 @@ public class departamento {
 	@Column(name="nome", length=50)
 	private String nome;
 	
+	
 	@Column(name="localizacao", length=30)
 	private  String localizacao;
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "departamento")
+	@JsonIgnoreProperties("departamento")
 	private List<produto> produto;
 	
 	
@@ -47,5 +51,11 @@ public class departamento {
 	}
 	public void setLocalizacao(String localizacao) {
 		this.localizacao = localizacao;
+	}
+	public List<produto> getProduto() {
+		return produto;
+	}
+	public void setProduto(List<produto> produto) {
+		this.produto = produto;
 	}
 }

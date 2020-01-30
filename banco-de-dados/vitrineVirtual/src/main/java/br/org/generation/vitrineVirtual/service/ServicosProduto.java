@@ -1,5 +1,7 @@
 package br.org.generation.vitrineVirtual.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -13,14 +15,18 @@ public class ServicosProduto implements IProdutoService{
 	IProdutoDB repo;
 
 	@Override
+	public List<produto> getAll() {
+		return (List<produto>)repo.findAll();
+	}
+
+	@Override
 	public void gravaProduto(produto p) {
 		try {
 			repo.save(p);
 		}
-		catch(Exception ex) {
+		catch (Exception ex) {
 			throw new RuntimeException("Erro ao inserir dados");
 		}
-		
 	}
 
 	@Override
@@ -30,7 +36,9 @@ public class ServicosProduto implements IProdutoService{
 	}
 
 	@Override
-	public produto recuperaProduto(int id) {
+	public produto getById(int id) {
 		return repo.findById(id).get();
 	}
+
+	
 }
